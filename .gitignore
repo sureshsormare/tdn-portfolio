@@ -1,0 +1,37 @@
+# dependencies / builds
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# secrets — keep real env files local; commit only .env.example
+.env
+.env.*
+!.env.example
+# local mirror tooling (never published)
+sync.sh
+.sync-exclude-*
+# editor / OS
+.DS_Store
+._*
+*.swp
+.idea/
+.vscode/
+# logs / scratch
+*.log
+logs/
+tmp/
+*.bak
+*-bak
+*.bak-*
+test-results/
+playwright-report/
