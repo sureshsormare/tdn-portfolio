@@ -1,6 +1,6 @@
 # TransDataNexus Portfolio
 
-Data products for pharmaceutical and healthcare markets, built and operated end to end by [Suresh Sormare](https://github.com/sureshsormare): trade intelligence, US healthcare analytics with natural-language querying, automated market-research reporting, and AI-search visibility measurement.
+Data products for pharmaceutical and healthcare markets, built and operated end to end by [Suresh Sormare](https://github.com/sureshsormare): trade intelligence, US healthcare analytics with natural-language querying, and AI-search visibility measurement.
 
 Every repository below is code only. Datasets, databases and credentials are never published; each README explains what data the app needs and how it is built, and each app ships a documented `.env.example` so it runs locally with your own keys.
 
@@ -22,15 +22,7 @@ Highlights: pages serve with no database in the request path; a single origin va
 
 Highlights: verify-then-serve NLQ with scope and provenance guards, schema-RAG, clarify-first behaviour and a golden regression bank; read-only DuckDB with per-query memory caps so it runs on a laptop. Deep dive: [docs/nlq-rag-architecture.md](https://github.com/sureshsormare/tdn-us-healthcare/blob/main/docs/nlq-rag-architecture.md).
 
-## 3. Report Generation Tool
-
-| Repository | What it is | Stack |
-|---|---|---|
-| tdn-report-generator (private, access on request) | Monorepo: Python pipeline from an Excel market model to validated storage, LLM-assisted Word/PDF reports and a master-sheet generator, plus a Next.js comparison dashboard on the same storage | Python 3.9, Dash/Plotly, python-docx, OpenAI (gpt-4o-mini, gpt-4.1-mini); Next.js 16, React 19, Recharts, d3 |
-
-Highlights: prompts grounded in the actual segment tables, a per-industry prompt library editable from the admin page, and one design system shared by dashboard and report. This repository is private; the code, the prompt-design and design-system write-ups, and a walkthrough are available to prospective clients on request.
-
-## 4. AI Visibility Platform
+## 3. AI Visibility Platform
 
 | Repository | What it is | Stack |
 |---|---|---|
@@ -49,8 +41,7 @@ flowchart LR
     HP["platform (lenses on DuckDB)"]
     HN["nlq (RAG + SQL guards)"]
   end
-  RG["3. tdn-report-generator (Excel -> dashboard + report)"]
-  AV["4. tdn-ai-visibility (AI answer-engine measurement)"]
+  AV["3. tdn-ai-visibility (AI answer-engine measurement)"]
   TP -- "precompute" --> TW
   TW -- "product facts" --> TS
   TS -- "published content" --> AV
@@ -66,10 +57,8 @@ flowchart LR
   HP --- DK
   HN --- DK
   TW --- S3
-  RG --- S3
   AV --- S3
   HN --- AI
-  RG --- AI
   TS --- AI
   AV --- AI
 ```
@@ -85,8 +74,6 @@ Common prerequisites: Node 20+, Python 3.9+ (3.11+ for the NLQ), PostgreSQL, the
 | SEO agent | 3001 |
 | Healthcare platform | 3000 |
 | NLQ API | 8000 |
-| Report generator backend (private repo) | 9000 |
-| Report dashboard (private repo) | 3000 |
 | AI visibility | 3000 |
 | MinIO | 9100 (API), 9101 (console) |
 
@@ -101,7 +88,7 @@ They are code-only mirrors of private working copies, synchronised from the loca
 - **Local-first, fail-closed.** Every storage client defaults to a local endpoint when unconfigured; no app can silently reach a cloud service.
 - **One spine, honest grains.** Cross-source numbers are resolved to a canonical key and never summed across grains.
 - **Grounded generation.** LLM output is written from supplied numbers, checked against returned rows, and discloses interpretation; refusals and clarifications are preferred to confident wrong answers.
-- **Evidence, not advice.** Dashboards and reports present signals with sources and vintages.
+- **Evidence, not advice.** Dashboards and answers present signals with sources and vintages.
 - **Reviewable automation.** Content leaves the system only after a human approves it.
 
 ## License
