@@ -6,6 +6,20 @@ Measures how brands and products show up inside AI answer engines: it issues the
 
 > Source code is private. This page, the design write-ups and the recordings are the public showcase; a code walkthrough is available on request.
 
+## Screens
+
+| Markets | Discovered brands |
+|---|---|
+| ![Markets](../media/ai-visibility/markets.png) | ![Discovered brands](../media/ai-visibility/discovered-brands.png) |
+
+| Gap analysis | Keywords & queries |
+|---|---|
+| ![Gap analysis](../media/ai-visibility/gap-analysis.png) | ![Keywords & queries](../media/ai-visibility/keywords.png) |
+
+| Visibility analytics |
+|---|
+| ![Visibility analytics](../media/ai-visibility/visibility-analytics.png) |
+
 ## What it does
 
 - **Visibility tracking:** for each prompt in a market, query every configured engine and record whether the brand is mentioned, where, with which citations and what sentiment (`src/lib/ai-engines/`).
