@@ -1,49 +1,59 @@
 # TransDataNexus Portfolio
 
-Data products for pharmaceutical and healthcare markets, built and operated end to end by [Suresh Sormare](https://github.com/sureshsormare): trade intelligence, US healthcare analytics with natural-language querying, and AI-search visibility measurement.
+Data products for pharmaceutical and healthcare markets, designed, built and operated end to end by [Suresh Sormare](https://github.com/sureshsormare): trade intelligence, US healthcare analytics with natural-language querying, and AI-search visibility measurement.
 
-> **Showcase only.** This repository is published so the work can be reviewed. All rights are reserved: no licence is granted to use, copy, modify or redistribute any part of it. See [LICENSE](LICENSE).
-
-Every repository below is code only. Datasets, databases and credentials are never published; each README explains what data the app needs and how it is built, and each app ships a documented `.env.example` so it runs locally with your own keys.
+> **Showcase only.** The source code for every project is private. This repository holds the public showcase: project pages, design write-ups, screenshots and recorded walkthroughs of the running applications. All rights are reserved; no licence is granted to use, copy, modify or redistribute any part of it ([LICENSE](LICENSE)). Code walkthroughs and live demonstrations are available to prospective clients on request.
 
 ## 1. Trade Data
 
-| Repository | What it is | Stack |
+| Project | What it is | Stack |
 |---|---|---|
-| [tdn-trade-website](https://github.com/sureshsormare/tdn-trade-website) | Programmatic-SEO website: thousands of product, supplier, buyer, HS-code and country pages rendered from a precomputed dataset, with an admin console for indexing and crawler analytics | Next.js 15, React 19, TypeScript, d3, S3-compatible image storage |
-| [tdn-trade-platform](https://github.com/sureshsormare/tdn-trade-platform) | SaaS application: shipment-level search, company and country profiles, trade-flow explorer, UN Comtrade module, auth, plans and credits | Next.js 15, PostgreSQL + Prisma, NextAuth, Recharts, d3 |
-| [tdn-trade-seo-agent](https://github.com/sureshsormare/tdn-trade-seo-agent) | Distribution agent: generates platform-native content from the data, publishes through eleven platform APIs after human review, produces narrated videos, monitors communities | Next.js 15, PostgreSQL + Prisma, OpenAI + TTS, Remotion |
+| [Trade Website](projects/trade-website.md) | Programmatic-SEO website: thousands of product, supplier, buyer, HS-code and country pages rendered from a precomputed dataset, with an admin console for indexing and crawler analytics | Next.js 15, React 19, TypeScript, d3, S3-compatible image storage |
+| [Trade Platform](projects/trade-platform.md) | SaaS application: shipment-level search, company and country profiles, trade-flow explorer, UN Comtrade module, auth, plans and credits | Next.js 15, PostgreSQL + Prisma, NextAuth, Recharts, d3 |
+| [SEO / Distribution Agent](projects/seo-agent.md) | Generates platform-native content from the data, publishes through eleven platform APIs after human review, produces narrated videos, monitors communities | Next.js 15, PostgreSQL + Prisma, OpenAI + TTS, Remotion |
 
-Highlights: pages serve with no database in the request path; a single origin variable moves the image corpus; nothing is published without an approved queue item.
+![Trade website walkthrough](media/website/walkthrough.gif)
 
 ## 2. TransDataNexus US Healthcare
 
-| Repository | What it is | Stack |
+| Project | What it is | Stack |
 |---|---|---|
-| [tdn-us-healthcare](https://github.com/sureshsormare/tdn-us-healthcare) | Monorepo: an analytics platform with nine decision lenses over public CMS/FDA data on a molecule spine, and a natural-language query service that turns questions into validated SQL and grounded answers | Next.js 16, DuckDB, FastAPI, ChromaDB, OpenAI, sqlglot, Vitest (98 files), Playwright (26 specs) |
+| [US Healthcare Analytics + NLQ](projects/us-healthcare.md) | An analytics platform with nine decision lenses over public CMS/FDA data on a molecule spine, and a natural-language query service that turns questions into validated SQL and grounded answers | Next.js 16, DuckDB, FastAPI, ChromaDB, OpenAI, sqlglot, Vitest (98 files), Playwright (26 specs) |
 
-Highlights: verify-then-serve NLQ with scope and provenance guards, schema-RAG, clarify-first behaviour and a golden regression bank; read-only DuckDB with per-query memory caps so it runs on a laptop. Deep dive: [docs/nlq-rag-architecture.md](https://github.com/sureshsormare/tdn-us-healthcare/blob/main/docs/nlq-rag-architecture.md).
+![Healthcare platform walkthrough](media/health/walkthrough.gif)
+
+Design write-up: [How a question becomes a grounded answer](docs/nlq-rag-architecture.md) (schema-RAG, metric grounding, SQL validation, scope and provenance guards, clarify-first behaviour, golden regression bank).
 
 ## 3. AI Visibility Platform
 
-| Repository | What it is | Stack |
+| Project | What it is | Stack |
 |---|---|---|
-| [tdn-ai-visibility](https://github.com/sureshsormare/tdn-ai-visibility) | Measures brand presence inside AI answer engines (OpenAI, Anthropic, Perplexity, Gemini): prompt runs, mention and citation parsing, competitor discovery, content gaps, AI-crawler tracking | Next.js 16, Vercel AI SDK, JSON tables on S3-compatible storage |
+| [AI Visibility Platform](projects/ai-visibility.md) | Measures brand presence inside AI answer engines (OpenAI, Anthropic, Perplexity, Gemini): prompt runs, mention and citation parsing, competitor discovery, content gaps, AI-crawler tracking | Next.js 16, Vercel AI SDK, JSON tables on S3-compatible storage |
+
+## Design write-ups
+
+| Document | Covers |
+|---|---|
+| [NLQ RAG architecture](docs/nlq-rag-architecture.md) | Retrieval, planning, SQL generation and the verification guards behind grounded answers |
+| [Programmatic SEO model](docs/programmatic-seo.md) | Page families, precompute pipeline, image pipeline, sitemaps, crawler analytics |
+| [Trade data model](docs/data-model.md) | Shipment, harmonisation and account models; query patterns |
+| [Distribution pipeline](docs/distribution-pipeline.md) | From a product page to published assets, videos and community monitoring |
+| [AI visibility measurement model](docs/measurement-model.md) | What is measured, how engines are queried, how mentions are scored, limits |
 
 ## How the pieces fit
 
 ```mermaid
 flowchart LR
   subgraph Trade["1. Trade Data"]
-    TP["tdn-trade-platform (SaaS on PostgreSQL)"]
-    TW["tdn-trade-website (precomputed pages)"]
-    TS["tdn-trade-seo-agent (distribution)"]
+    TP["Trade Platform (SaaS on PostgreSQL)"]
+    TW["Trade Website (precomputed pages)"]
+    TS["SEO / Distribution Agent"]
   end
   subgraph Health["2. US Healthcare"]
-    HP["platform (lenses on DuckDB)"]
-    HN["nlq (RAG + SQL guards)"]
+    HP["Analytics platform (lenses on DuckDB)"]
+    HN["NLQ service (RAG + SQL guards)"]
   end
-  AV["3. tdn-ai-visibility (AI answer-engine measurement)"]
+  AV["3. AI Visibility Platform"]
   TP -- "precompute" --> TW
   TW -- "product facts" --> TS
   TS -- "published content" --> AV
@@ -51,7 +61,7 @@ flowchart LR
   subgraph Infra["Shared local infrastructure"]
     PG[("PostgreSQL")]
     DK[("DuckDB")]
-    S3[("S3-compatible object storage (MinIO)")]
+    S3[("S3-compatible object storage")]
     AI["OpenAI"]
   end
   TP --- PG
@@ -65,34 +75,18 @@ flowchart LR
   AV --- AI
 ```
 
-## Run everything locally
-
-Common prerequisites: Node 20+, Python 3.9+ (3.11+ for the NLQ), PostgreSQL, the DuckDB CLI, and a local S3-compatible server (MinIO). Each repository's "Getting started" section has the exact steps.
-
-| App | Default port |
-|---|---|
-| Trade website | 3005 (`next dev -p 3005`) |
-| Trade platform | 3000 |
-| SEO agent | 3001 |
-| Healthcare platform | 3000 |
-| NLQ API | 8000 |
-| AI visibility | 3000 |
-| MinIO | 9100 (API), 9101 (console) |
-
-Several apps default to port 3000; run one at a time or pass `-p`.
-
-## How these repositories are maintained
-
-They are code-only mirrors of private working copies, synchronised from the local workspace. Databases, datasets, generated media and the vector index are excluded by design; the data build pipelines are described in each README and can be demonstrated on request.
-
 ## Engineering principles
 
-- **Local-first, fail-closed.** Every storage client defaults to a local endpoint when unconfigured; no app can silently reach a cloud service.
+- **Local-first, fail-closed.** Every storage client defaults to a local endpoint when unconfigured; no application can silently reach a cloud service.
 - **One spine, honest grains.** Cross-source numbers are resolved to a canonical key and never summed across grains.
 - **Grounded generation.** LLM output is written from supplied numbers, checked against returned rows, and discloses interpretation; refusals and clarifications are preferred to confident wrong answers.
 - **Evidence, not advice.** Dashboards and answers present signals with sources and vintages.
-- **Reviewable automation.** Content leaves the system only after a human approves it.
+- **Reviewable automation.** Content leaves a system only after a human approves it.
+
+## Requesting access
+
+Source code, data-pipeline details and live demonstrations are shared with prospective clients under agreement. Contact through the GitHub profile.
 
 ## License
 
-All repositories are proprietary and published for portfolio evaluation. See the LICENSE file in each repository.
+All rights reserved; showcase only. See [LICENSE](LICENSE).
