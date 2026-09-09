@@ -2,6 +2,8 @@
 
 Data products for pharmaceutical and healthcare markets, built and operated end to end by [Suresh Sormare](https://github.com/sureshsormare): trade intelligence, US healthcare analytics with natural-language querying, and AI-search visibility measurement.
 
+> **Showcase only.** This repository is published so the work can be reviewed. All rights are reserved: no licence is granted to use, copy, modify or redistribute any part of it. See [LICENSE](LICENSE).
+
 Every repository below is code only. Datasets, databases and credentials are never published; each README explains what data the app needs and how it is built, and each app ships a documented `.env.example` so it runs locally with your own keys.
 
 ## 1. Trade Data
