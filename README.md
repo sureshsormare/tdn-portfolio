@@ -26,9 +26,9 @@ Highlights: verify-then-serve NLQ with scope and provenance guards, schema-RAG, 
 
 | Repository | What it is | Stack |
 |---|---|---|
-| [tdn-report-generator](https://github.com/sureshsormare/tdn-report-generator) | Monorepo: Python pipeline from an Excel market model to validated storage, LLM-assisted Word/PDF reports and a master-sheet generator, plus a Next.js comparison dashboard on the same storage | Python 3.9, Dash/Plotly, python-docx, OpenAI (gpt-4o-mini, gpt-4.1-mini); Next.js 16, React 19, Recharts, d3 |
+| tdn-report-generator (private, access on request) | Monorepo: Python pipeline from an Excel market model to validated storage, LLM-assisted Word/PDF reports and a master-sheet generator, plus a Next.js comparison dashboard on the same storage | Python 3.9, Dash/Plotly, python-docx, OpenAI (gpt-4o-mini, gpt-4.1-mini); Next.js 16, React 19, Recharts, d3 |
 
-Highlights: prompts grounded in the actual segment tables, a per-industry prompt library editable from the admin page, and one design system shared by dashboard and report. Deep dives: [prompt-design.md](https://github.com/sureshsormare/tdn-report-generator/blob/main/docs/prompt-design.md), [design-system.md](https://github.com/sureshsormare/tdn-report-generator/blob/main/docs/design-system.md).
+Highlights: prompts grounded in the actual segment tables, a per-industry prompt library editable from the admin page, and one design system shared by dashboard and report. This repository is private; the code, the prompt-design and design-system write-ups, and a walkthrough are available to prospective clients on request.
 
 ## 4. AI Visibility Platform
 
@@ -85,8 +85,8 @@ Common prerequisites: Node 20+, Python 3.9+ (3.11+ for the NLQ), PostgreSQL, the
 | SEO agent | 3001 |
 | Healthcare platform | 3000 |
 | NLQ API | 8000 |
-| Report generator backend | 9000 |
-| Report dashboard | 3000 |
+| Report generator backend (private repo) | 9000 |
+| Report dashboard (private repo) | 3000 |
 | AI visibility | 3000 |
 | MinIO | 9100 (API), 9101 (console) |
 
