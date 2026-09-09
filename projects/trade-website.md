@@ -10,15 +10,15 @@ Programmatic-SEO marketing website for pharmaceutical trade intelligence: thousa
 
 | Home | Product hub |
 |---|---|
-| ![Home](../media/website/home.png) | ![Product hub](../media/website/pharmaceutical-acarbose-.png) |
+| ![Home](../media/website/home.png) | ![Product hub](../media/website/pharmaceutical-product.png) |
 
 | Suppliers | Buyers |
 |---|---|
-| ![Suppliers](../media/website/pharmaceutical-acarbose-suppliers-.png) | ![Buyers](../media/website/pharmaceutical-acarbose-buyers-.png) |
+| ![Suppliers](../media/website/pharmaceutical-suppliers.png) | ![Buyers](../media/website/pharmaceutical-buyers.png) |
 
-| HS code page | Countries |
+| Supplier-buyer network (sankey) | HS code page |
 |---|---|
-| ![HS code page](../media/website/hs-code-300490-.png) | ![Countries](../media/website/countries-.png) |
+| ![Supplier-buyer network](../media/website/supplier-buyer-network.png) | ![HS code page](../media/website/hs-code.png) |
 
 Recorded walkthrough: ![walkthrough](../media/website/walkthrough.gif)
 

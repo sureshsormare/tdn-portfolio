@@ -8,21 +8,21 @@ Pharma-commercial intelligence on US public healthcare data: an analytics platfo
 
 ## Screens
 
-| Data Atlas | Supply risk |
+| Data Atlas | Plant map |
 |---|---|
-| ![Data Atlas](../media/health/atlas.png) | ![Supply risk](../media/health/supply.png) |
+| ![Data Atlas](../media/health/atlas.png) | ![Plant map](../media/health/supply-plant-map.png) |
 
-| Plant map | Patent cliff |
+| Patent cliff | Market share |
 |---|---|
-| ![Plant map](../media/health/supply-plant-map.png) | ![Patent cliff](../media/health/regulatory-patent-cliff.png) |
+| ![Patent cliff](../media/health/regulatory-patent-cliff.png) | ![Market share](../media/health/competitive-market-share.png) |
 
-| Market share | Coverage |
+| Coverage & restrictions | Disease landscape |
 |---|---|
-| ![Market share](../media/health/competitive-market-share.png) | ![Coverage](../media/health/market-access-coverage.png) |
+| ![Coverage](../media/health/market-access-coverage.png) | ![Disease landscape](../media/health/disease.png) |
 
-| Disease landscape | Generic entry |
+| Generic entry | Molecule journey |
 |---|---|
-| ![Disease landscape](../media/health/disease.png) | ![Generic entry](../media/health/entry.png) |
+| ![Generic entry](../media/health/entry.png) | ![Molecule journey](../media/health/journey-metformin.png) |
 
 Recorded walkthrough: ![walkthrough](../media/health/walkthrough.gif)
 

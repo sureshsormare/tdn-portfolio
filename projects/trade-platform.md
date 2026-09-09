@@ -12,13 +12,13 @@ SaaS application for pharmaceutical trade intelligence: search and profile India
 |---|---|
 | ![Dashboard](../media/trade-platform/dashboard.png) | ![Global trade (Comtrade)](../media/trade-platform/dashboard-global-trade.png) |
 
-| Companies | Trade-flow explorer |
+| Company profile | Trade-flow explorer |
 |---|---|
-| ![Companies](../media/trade-platform/dashboard-companies.png) | ![Trade-flow explorer](../media/trade-platform/dashboard-trade-flow.png) |
+| ![Company profile](../media/trade-platform/dashboard-company.png) | ![Trade-flow explorer](../media/trade-platform/dashboard-trade-flow.png) |
 
-| Countries |
+| Country profile |
 |---|
-| ![Countries](../media/trade-platform/dashboard-countries.png) |
+| ![Country profile](../media/trade-platform/dashboard-country.png) |
 
 ## What it does
 

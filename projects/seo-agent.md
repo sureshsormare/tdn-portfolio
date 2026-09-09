@@ -12,13 +12,13 @@ Operator console and agent engine that turns trade-data pages into platform-nati
 |---|---|
 | ![Admin home](../media/seo-agent/admin.png) | ![Review queue](../media/seo-agent/admin-queue.png) |
 
-| Campaigns | Video pipeline |
+| Video pipeline | Analytics |
 |---|---|
-| ![Campaigns](../media/seo-agent/admin-campaigns.png) | ![Video pipeline](../media/seo-agent/admin-videos.png) |
+| ![Video pipeline](../media/seo-agent/admin-videos.png) | ![Analytics](../media/seo-agent/admin-analytics.png) |
 
-| Analytics | Community conversations |
+| Reddit monitoring | Quora monitoring |
 |---|---|
-| ![Analytics](../media/seo-agent/admin-analytics.png) | ![Community conversations](../media/seo-agent/admin-conversations.png) |
+| ![Reddit monitoring](../media/seo-agent/admin-reddit.png) | ![Quora monitoring](../media/seo-agent/admin-quora.png) |
 
 ## What it does
 
